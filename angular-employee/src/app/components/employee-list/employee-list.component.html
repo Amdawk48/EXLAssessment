@@ -1,0 +1,42 @@
+<div class="card my-5">
+    <div class="card-body">
+
+      <h2>Employees: {{ empCount }}</h2>
+      <form (ngSubmit)="getEmployeesByCriteria()" #searchForm="ngForm">
+        <label for="name">Name: </label>
+         <input type="text" id="name" name="name" [(ngModel)]="this.nameSearch"><br>
+        <span>
+          <label for="startDate">Start Date:  </label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="this.startDateSearch">
+          <label for="endDate">End Date: </label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="this.endDateSearch">
+        </span>
+        <input type="submit">
+      </form>
+      
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Age</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.jobTitle }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.startDate }}</td>
+            <td>{{ employee.endDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
