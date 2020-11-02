@@ -1,2 +1,2 @@
-cd angular_front_end\angular-employee
+cd ./angular-employee
 ng serve --open
